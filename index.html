@@ -10,60 +10,98 @@
 
     <!--JS-->
     <script src="http://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="js/main.js"></script>
 
     <!-- STYLE -->
     <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="css/main.css">
     <style type="text/css">
-        html,body{ margin:0; padding:0; width:100%; height:100%; position:relative;}
-		body { overflow:hidden;}
-		.wrap { height:100%; position:relative; width:300%; } /* width값 수정하시오. .box 갯수 x 100% */
-        .box{  height:100%; position:relative; color:#ffffff; font-size:24pt; float:left; width:calc(100%/3);} /* calc의 값을 수정하시오.  100% / .box 갯수 */
-        #intro{height: 80%; width: 1000px; background-color: rgb(56, 56, 56); margin: 0 auto;}
+
+        html,body{ margin:0; padding:0; width:100%; height:100%;}
+		/* body { overflow:hidden;} */
+
+    
+
+		.wrap { height:100%; width:500%; position: relative; } /* width값 수정하시오. .box 갯수 x 100% */
+        .box{  height:100%; width:100%; position:relative; color:#ffffff; font-size:24pt; float:left; width:calc(100%/5);} /* calc의 값을 수정하시오.  100% / .box 갯수 */
+        #intro{height: 700px; width: 1000px; background-color: rgb(56, 56, 56); margin: 0 auto;}
+
+    </style>    
+    
+    
+   
     </style>
 
 </head>
 
 <body>
-   
-          <section class="wrap">
-    <div class="box" id="box1" style="background-color:rgb(99, 99, 99);">1
-        <div class="go" id="intro"></div>
+    <div id="homeLoader" data-scroll-section>
+        <div class="wrapper" data-scroll-call="loaderHomepage" data-scroll>
+            <div class="text">
+                <div class="wrapper__title" data-scroll><h2 class="textStroke"><span>K</span><span>I</span><span>M</span><span>H</span><span>A</span><span>E</span><span>D</span><span>E</span><span>N</h2>
+                    <div class="wrapper__title" data-scroll><h2 class="textStroke"><span>W</span><span>e</span><span>b</span><span>&nbsp;</span><span>&</span><span>&nbsp;</span><span>D</span><span>e</span><span>s</span><span>g</span><span>i</span><span>n</span></h2>
+                    <div class="wrapper__title" data-scroll><h2 class="textStroke"><span>D</span><span>e</span><span>s</span><span>i</span><span>g</span><span>n</span></h2></div>            
+                </div>
+            <div class="text2">
+                <div class="wrapper__desc"><p>introduce my self----------------------Title------------------------------ </p></div>
+                <div class="wrapper__desc"><p>Thanks to introduce my self----------------------Title------------------------------ </p></div>
+            </div>
+
+            <div class="scrollDownHomepage">
+                <div class="scrollDownHomepage__container">
+                    <div class="image-arrow"></div>
+                    <div class="image-circle"></div>
+                </div>
+            </div>
+            
+        </div>
+
+        <div class="wrap">
+            <div class="box" id="box1" style="background-color:rgb(99, 99, 99);">첫 번째
+                <div class="go" id="intro">
+                    
+                </div>
+            </div>
+            <div class="box" id="box2" style="background-color:rgb(168, 168, 168);">두 번째
+                <div class="go" id="intro">
+                    
+                </div>
+            </div>
+            <div class="box" id="box3" style="background-color:rgb(248, 200, 200);">세 번째
+                <div class="go" id="intro"></div>
+            </div>
+            <div class="box" id="box4" style="background-color:rgb(107, 22, 163);">네 번째
+                <div class="go" id="intro"></div>
+            </div>
+            <div class="box" id="box4" style="background-color:rgb(109, 143, 45);">다섯 번째
+                <div class="go" id="intro"></div>
+            </div>
+        </div>
+        
+            <div class="wrap" id="wrap">
+                <nav>
+                    <ul>
+                        <li>
+                            <a data-anchor="" href=""><span></span></a>
+                        </li>
+                        <li>
+                            <a data-anchor="" href=""><span></span></a>
+                        </li>
+                        <li>
+                            <a data-anchor="" href=""><span></span></a>
+                        </li>
+                        <li>
+                            <a data-anchor="" href=""><span></span></a>
+                        </li>
+                        <li>
+                            <a data-anchor="" href=""><span></span></a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
     </div>
-    <div class="box" id="box2" style="background-color:rgb(168, 168, 168);">2
-        <div class="go" id="intro"></div>
-    </div>
-    <div class="box" id="box3" style="background-color:rgb(248, 200, 200);">3
-        <div class="go" id="intro"></div>
-    </div>
-</section>
-    <div class="wrap" id="wrap">
-    <header>
-        <a href="#" class="logo">
-            <img src="" alt="logo">
-        </a>
-    </header>
-        <nav>
-            <ul>
-                <li>
-                    <a data-anchor="" href=""><span></span></a>
-                </li>
-                <li>
-                    <a data-anchor="" href=""><span></span></a>
-                </li>
-                <li>
-                    <a data-anchor="" href=""><span></span></a>
-                </li>
-                <li>
-                    <a data-anchor="" href=""><span></span></a>
-                </li>
-                <li>
-                    <a data-anchor="" href=""><span></span></a>
-                </li>
-            </ul>
-        </nav>
-        <div id="intro">sdsds</div>
-      
-<script>
+    
+    <script>
 
     //가로 스크롤
  var bn = $(".box").length;
@@ -74,7 +112,7 @@
 		if (event.wheelDelta) {
 			delta = event.wheelDelta / 120;
 			if (window.opera) delta = -delta;
-		} else if (event.detail) delta = -event.detail / 3;
+		} else if (event.detail) delta = -event.detail / 5;
 
 		if (delta < 0) {
 				n = $(this).index()+1;
@@ -90,7 +128,6 @@
 		$(".wrap").stop().animate({left:-n*100+"%"});			
    });
 </script>
-    </div>
 </body>
 
 </html>
