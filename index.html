@@ -24,8 +24,19 @@
     
         #project{overflow: hidden; border: 5px solid floralwhite;}
 		.wrap { height:900px; width:1000%; position: relative; } /* width값 수정하시오. .box 갯수 x 100% */
-        .box{  height:100%; width:100%; position:relative; color:#ffffff; font-size:24pt; float:left; width:calc(100%/5);} /* calc의 값을 수정하시오.  100% / .box 갯수 */
-        #intro{height: 600px; width: 70%; background-color: rgba(255, 255, 255, 0.2); margin: 100px auto; }
+        .box{ 
+             height:100%; width:100%; position:relative; color:#ffffff; 
+             font-size:24pt; float:left;
+              width:calc(100%/5); /* calc의 값을 수정하시오.  100% / .box 갯수 */
+           
+        }
+        #intro{
+            height: 600px; width: 70%; 
+            background-color: rgba(255, 255, 255, 0.2);
+            margin: 100px auto; 
+            
+        }
+            
         #intro_title{
             height: 200px; 
             border: 3px solid floralwhite;
@@ -35,11 +46,47 @@
             left: 150px;
         } 
 
+        .down{
+            font-size: 60px;
+            width: max-content;
+            height: auto;
+            margin: 0 auto;
+            border: 2px solid white;
+        }
+        
+
     </style>    
-    
-    
-   
-    </style>
+
+        <script>
+
+            $(function(){
+                $('.down').click(function(){
+                    $('html,body').animate({ scrollTop : 1200},1000)
+                });
+            });
+        </script>
+
+        <script>
+            
+      //js/mousewheel.js
+      $(function(){
+        var win_h = $(window).height();
+        $('#homeLoader').each(function(index){
+          $(this).attr("data-index",win_h * index);
+        });
+
+        $('#homeLoader').on("mousewheel",function(e){
+          var pagePos = parseInt($(this).attr("data-index"));
+          if(e.originalEvent.wheelDelta >=0 ){
+            $("html,body").stop().animate({scrollTop:pagePos - win_h});
+            return false;
+          } else if (e.originalEvent.wheelDelta < 0) {
+            $("html,body").stop().animate({scrollTop:pagePos + win_h},1000);
+            return false;
+          }
+        });
+      });
+        </script>
 
 </head>
 
@@ -62,6 +109,10 @@
                     <div class="image-arrow"></div>
                     <div class="image-circle"></div>
                 </div>
+            </div>
+
+            <div class="down">
+                DOWN
             </div>
         </div>
     </div>
