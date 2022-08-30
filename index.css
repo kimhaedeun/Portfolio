@@ -3,109 +3,31 @@
 body{background-color: black;}
 *{color:floralwhite;}
 
-#homeLoader{position:relative;top:0;left:0;width:100%;height:80vh;z-index:4; background-color: sandybrown;}
+#homeLoader{
+    position:relative;
+    top:0;left:0;
+    width:100%;
+    height: max-content;
+    z-index:4; 
+    background-color: sandybrown;
+}
 
 
-#homeLoader .wrapper{position:absolute;width:100%;height:100%}
+#homeLoader .wrapper{
+    width:100%;
+    height:100%;
+}
 
-
-#homeLoader .wrapper.hide .text .wrapper__title{-webkit-transform:translateY(-10vh);
-    transform:translateY(-10vh);
-    opacity:0;
-    -webkit-transition:transform 1.4s ease-in 0s,opacity 1.4s ease-in 0s;
-    -webkit-transition:opacity 1.4s ease-in 0s,-webkit-transform 1.4s ease-in 0s;
-    transition:opacity 1.4s ease-in 0s,-webkit-transform 1.4s ease-in 0s;
-    transition:transform 1.4s ease-in 0s,opacity 1.4s ease-in 0s;
-    transition:transform 1.4s ease-in 0s,opacity 1.4s ease-in 0s,-webkit-transform 1.4s ease-in 0s}
-#homeLoader .wrapper.hide .text2{-webkit-transform:translateY(-10vh);
-    transform:translateY(-10vh);opacity:0;
-    -webkit-transition:transform 1.4s ease-in 0s,opacity 1.4s ease-in 0s;
-    -webkit-transition:opacity 1.4s ease-in 0s,-webkit-transform 1.4s ease-in 0s;transition:opacity 1.4s ease-in 0s,-webkit-transform 1.4s ease-in 0s;
-    transition:transform 1.4s ease-in 0s,opacity 1.4s ease-in 0s;
-    transition:transform 1.4s ease-in 0s,opacity 1.4s ease-in 0s,-webkit-transform 1.4s ease-in 0s}
-#homeLoader .wrapper.hide .circle{top:calc(-9vw - 10vh);opacity:0 !important;
-    -webkit-transition:top 1.4s ease-in 0s,opacity 1.4s ease-in 0s;
-    transition:top 1.4s ease-in 0s,opacity 1.4s ease-in 0s}
-#homeLoader .wrapper.show .text .wrapper__title{-webkit-transform:translateY(0);transform:translateY(0);
-    opacity:1;
-    -webkit-transition:transform 1.4s ease-out 0s,opacity 1.4s ease-out 0s;
-    -webkit-transition:opacity 1.4s ease-out 0s,-webkit-transform 1.4s ease-out 0s;
-    transition:opacity 1.4s ease-out 0s,-webkit-transform 1.4s ease-out 0s;
-    transition:transform 1.4s ease-out 0s,opacity 1.4s ease-out 0s;
-    transition:transform 1.4s ease-out 0s,opacity 1.4s ease-out 0s,-webkit-transform 1.4s ease-out 0s}
-#homeLoader .wrapper.show .text2{-webkit-transform:translateY(0);transform:translateY(0);
-    opacity:1;
-    -webkit-transition:transform 1.4s ease-out 0s,opacity 1.4s ease-out 0s;
-    -webkit-transition:opacity 1.4s ease-out 0s,-webkit-transform 1.4s ease-out 0s;
-    transition:opacity 1.4s ease-out 0s,-webkit-transform 1.4s ease-out 0s;
-    transition:transform 1.4s ease-out 0s,opacity 1.4s ease-out 0s;
-    transition:transform 1.4s ease-out 0s,opacity 1.4s ease-out 0s,-webkit-transform 1.4s ease-out 0s}
-#homeLoader .wrapper.show .circle{top:-9vw;
-    opacity:1 !important;
-    -webkit-transition:top 1.4s ease-out 0s,opacity 1.4s ease-out 0s;
-    transition:top 1.4s ease-out 0s,opacity 1.4s ease-out 0s}
-#homeLoader .wrapper .circle{
-    position:absolute;
-    top:-9vw;
-    right:-7vw;
-    z-index:2;
-    width:34.375vw;
-    opacity:1; /**opacity결정**/
-    -webkit-transform:scale(0.5);
-    transform:scale(0.5);
-    -webkit-animation-name:animation-rotation-dots;
-    animation-name:animation-rotation-dots;
-    -webkit-animation-duration:30s;
-    animation-duration:30s;
-    -webkit-animation-iteration-count:infinite;animation-iteration-count:infinite;
-    -webkit-animation-timing-function:linear;animation-timing-function:linear}
-#homeLoader .wrapper .circle svg{width:100%;display:block;
-    height:auto;
-    fill:var(--subColor)}
 
 #homeLoader .wrapper .text{
     /* position:absolute; */ /*확인*/
     bottom:2vw;
     left:6.25vw}
 
-#homeLoader .wrapper .text .wrapper__title{position:relative;
-    display:block;
-    -webkit-transform-origin:center top;
-    transform-origin:center top;
-    -webkit-transform-style:preserve-3d;
-    transform-style:preserve-3d}
-#homeLoader .wrapper .text .wrapper__title h2{color:#fff;font-family:"Monument Grotesk";
-    font-weight:normal;font-size:9vw;line-height:9vw;
-    -webkit-font-smoothing:antialiased;
-    -webkit-transform:translateY(50%);
-    transform:translateY(50%);opacity:1}/**opacity결정**/
+#homeLoader .wrapper .text .wrapper__title:last-of-type h2{
+    color:#fff;font-family:"Monument Grotesk";
 
-#homeLoader .wrapper .text .wrapper__title h2 span{
-    position:relative;
-    display:inline-block}
-#homeLoader .wrapper .text .wrapper__title h2.textColor{
-    position:absolute;
-    top:0;left:0;color:#fff;font-family:"Monument Grotesk";font-weight:normal;font-size:9vw;-webkit-text-stroke:0px}
-
-#homeLoader .wrapper .text .wrapper__title h2.textColor span{clip-path:polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%);
-    -webkit-clip-path:polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%);
-    -o-clip-path:polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%);
-    -ms-clip-path:polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%)}
-#homeLoader .wrapper .text .wrapper__title:last-of-type h2{color:#fff;font-family:"Monument Grotesk";font-weight:normal;font-size:9vw}
-
-#homeLoader .wrapper .text2 .wrapper__desc{position:relative;overflow:hidden;-webkit-transform:translateY(10vh);
-    transform:translateY(10vh);opacity:1}/**opacity결정**/
-#homeLoader .wrapper .text2 .wrapper__desc .title-projects.mobile{
-    position:relative;margin-top:2.5rem}
-#homeLoader .wrapper .text2 .wrapper__desc .title-projects.mobile h2{
-    line-height:1.4rem;color:#fff;
-    font-family:"Monument Grotesk";
-    font-weight:normal;
-    font-size:1.4rem;text-align:center}
-#homeLoader .wrapper .text2 .wrapper__desc p{
-    font-family:"Monument Grotesk";
-    font-weight:normal;font-size:20px;
-    line-height:30px}
+    font-size:8vw}
 
 #homeLoader .wrapper .text2 .wrapper__desc:first-of-type p{
     color:#fff;
@@ -113,7 +35,7 @@ body{background-color: black;}
     font-weight:normal;
     font-size:30px;
     line-height:40px;
-    margin-bottom:2vh}
+    }
 
 
 
@@ -145,18 +67,10 @@ ul {
 
 
 
-.wrap {
-    width: 100%;
-    height: 100%;
-    
-}
 
 
 
 
-body {
-    overflow: overlay;
-}
 
 
 /* HEADER */

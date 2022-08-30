@@ -22,9 +22,17 @@
 
     
 
-		.wrap { height:100%; width:500%; position: relative; } /* width값 수정하시오. .box 갯수 x 100% */
+		.wrap { height:900px; width:500%; position: relative; } /* width값 수정하시오. .box 갯수 x 100% */
         .box{  height:100%; width:100%; position:relative; color:#ffffff; font-size:24pt; float:left; width:calc(100%/5);} /* calc의 값을 수정하시오.  100% / .box 갯수 */
-        #intro{height: 700px; width: 1000px; background-color: rgb(56, 56, 56); margin: 0 auto;}
+        #intro{height: 600px; width: 70%; background-color: rgba(255, 255, 255, 0.2); margin: 100px auto; }
+        #intro_title{
+            height: 200px; 
+            border: 3px solid floralwhite;
+            width: 800px; 
+            position:absolute; 
+            bottom: 150px;
+            left: 150px;
+        } 
 
     </style>    
     
@@ -38,7 +46,7 @@
     <div id="homeLoader" data-scroll-section>
         <div class="wrapper" data-scroll-call="loaderHomepage" data-scroll>
             <div class="text">
-                <div class="wrapper__title" data-scroll><h2 class="textStroke"><span>K</span><span>I</span><span>M</span><span>H</span><span>A</span><span>E</span><span>D</span><span>E</span><span>N</h2>
+                <div class="wrapper__title" data-scroll><h2 class="textStroke"><span>K</span><span>I</span><span>M</span><span>H</span><span>A</span><span>E</span><span>D</span><span>E</span><span>U</span><span>N</h2>
                     <div class="wrapper__title" data-scroll><h2 class="textStroke"><span>W</span><span>e</span><span>b</span><span>&nbsp;</span><span>&</span><span>&nbsp;</span><span>D</span><span>e</span><span>s</span><span>i</span><span>g</span><span>n</span></h2>
                     <div class="wrapper__title" data-scroll><h2 class="textStroke"><span>D</span><span>e</span><span>s</span><span>i</span><span>g</span><span>n</span></h2></div>            
                 </div>
@@ -53,55 +61,56 @@
                     <div class="image-circle"></div>
                 </div>
             </div>
-            
         </div>
-
-        <div class="wrap">
-            <div class="box" id="box1" style="background-color:rgb(99, 99, 99);">첫 번째
-                <div class="go" id="intro">
-                    
-                </div>
+    </div>
+    <div class="wrap">
+        <div class="box" id="box1" style="background-color:rgb(99, 99, 99);">첫 번째
+            <div class="go" id="intro">
+                
             </div>
-            <div class="box" id="box2" style="background-color:rgb(168, 168, 168);">두 번째
-                <div class="go" id="intro">
-                    
-                </div>
-            </div>
-            <div class="box" id="box3" style="background-color:rgb(248, 200, 200);">세 번째
-                <div class="go" id="intro"></div>
-            </div>
-            <div class="box" id="box4" style="background-color:rgb(107, 22, 163);">네 번째
-                <div class="go" id="intro"></div>
-            </div>
-            <div class="box" id="box4" style="background-color:rgb(109, 143, 45);">다섯 번째
-                <div class="go" id="intro"></div>
+            <div id="intro_title"></div>
+        </div>
+        <div class="box" id="box2" style="background-color:rgb(168, 168, 168);">두 번째
+            <div class="go" id="intro">
+                
             </div>
         </div>
-        
-            <div class="wrap" id="wrap">
-                <nav>
-                    <ul>
-                        <li>
-                            <a data-anchor="" href=""><span></span></a>
-                        </li>
-                        <li>
-                            <a data-anchor="" href=""><span></span></a>
-                        </li>
-                        <li>
-                            <a data-anchor="" href=""><span></span></a>
-                        </li>
-                        <li>
-                            <a data-anchor="" href=""><span></span></a>
-                        </li>
-                        <li>
-                            <a data-anchor="" href=""><span></span></a>
-                        </li>
-                    </ul>
-                </nav>
-            </div>
+        <div class="box" id="box3" style="background-color:rgb(248, 200, 200);">세 번째
+            <div class="go" id="intro"></div>
+        </div>
+        <div class="box" id="box4" style="background-color:rgb(107, 22, 163);">네 번째
+            <div class="go" id="intro"></div>
+        </div>
+        <div class="box" id="box4" style="background-color:rgb(109, 143, 45);">다섯 번째
+            <div class="go" id="intro"></div>
+        </div>
     </div>
     
-    <script>
+        <div class="wrapa" id="wrap">
+            <nav>
+                <ul>
+                    <li>
+                        <a data-anchor="" href=""><span></span></a>
+                    </li>
+                    <li>
+                        <a data-anchor="" href=""><span></span></a>
+                    </li>
+                    <li>
+                        <a data-anchor="" href=""><span></span></a>
+                    </li>
+                    <li>
+                        <a data-anchor="" href=""><span></span></a>
+                    </li>
+                    <li>
+                        <a data-anchor="" href=""><span></span></a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    
+
+
+<script>
 
     //가로 스크롤
  var bn = $(".box").length;
