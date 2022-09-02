@@ -22,7 +22,7 @@
        .wrap{overflow: hidden;}
 
     
-        #project{overflow: hidden; border: 5px solid floralwhite;}
+        #project{overflow: hidden; border: 5px solid floralwhite; position: relative;}
 		.wrap { height:900px; width:1000%; position: relative; } /* width값 수정하시오. .box 갯수 x 100% */
         .box{ 
              height:100%; width:100%; position:relative; color:#ffffff; 
@@ -51,23 +51,106 @@
             width: max-content;
             height: auto;
             margin: 0 auto;
-            border: 2px solid white;
+            cursor: pointer;
         }
+
+        .up{
+            font-size: 60px;
+            width: 100%;
+            text-align: center;
+            height: auto;
+            margin: 0 auto;
+            border: 2px solid white;
+           z-index: 1;
+        }   
         
+        .name{
+            display: inline; vertical-align: middle;
+            font-size: 15vh;
+            width: 500px;
+            height: 150px;
+            border-bottom: 5px solid rgb(230, 230, 230);
+            letter-spacing: 10px;
+            color: rgb(79, 165, 151);
+           
+        }
 
     </style>    
 
-        <script>
+    <script>
 
+    window.onload = function(){
+        
+    const text = document.querySelector(".name");
+
+    // 글자 모음
+    const letters = ["프론트엔드개발자", "UI/UX디자이너"];
+
+    // 글자 입력 속도
+    const speed = 120;
+    let i = 0;
+
+    // 타이핑 효과
+    const typing = async () => {  
+    const letter = letters[i].split("");
+    
+    while (letter.length) {
+        await wait(speed);
+        text.innerHTML += letter.shift(); 
+    }
+    
+    // 잠시 대기
+    await wait(500);
+    
+    // 지우는 효과
+    if (letters[i + 1]) remove();
+    }
+
+    // 글자 지우는 효과
+        const remove = async () => {
+        const letter = letters[i].split("");
+        
+        while (letter.length) {
+            await wait(speed);
+            
+            letter.pop();
+            text.innerHTML = letter.join(""); 
+        }
+        
+        // 다음 순서의 글자로 지정, 타이핑 함수 다시 실행
+        i++;
+        typing();
+        }
+
+        // 딜레이 기능 ( 마이크로초 )
+        function wait(ms) {
+        return new Promise(res => setTimeout(res, ms))
+        }
+
+        // 초기 실행
+        setTimeout(typing, 500);
+
+    }
+
+    </script>
+
+        <script>
             $(function(){
                 $('.down').click(function(){
-                    $('html,body').animate({ scrollTop : 1200},1000)
+                    $('html,body').animate({ scrollTop : 1300},1000)
                 });
             });
         </script>
 
         <script>
-            
+            $(function(){
+                $('.up').click(function(){
+                    $('html,body').animate({ scrollTop:0})
+                })
+            })
+        </script>
+
+<!-- <script>        
       //js/mousewheel.js
       $(function(){
         var win_h = $(window).height();
@@ -86,39 +169,31 @@
           }
         });
       });
-        </script>
+</script> -->
 
 </head>
 
 <body>
-    
-    <div id="homeLoader" data-scroll-section>
-        <div class="wrapper" data-scroll-call="loaderHomepage" data-scroll>
+ 
+    <div id="homeLoader">
+        <div class="wrapper">
             <div class="text">
-                <div class="wrapper__title" data-scroll><h2 class="textStroke"><span>K</span><span>I</span><span>M</span><span>H</span><span>A</span><span>E</span><span>D</span><span>E</span><span>U</span><span>N</h2>
-                    <div class="wrapper__title" data-scroll><h2 class="textStroke"><span>W</span><span>e</span><span>b</span><span>&nbsp;</span><span>&</span><span>&nbsp;</span><span>D</span><span>e</span><span>s</span><span>i</span><span>g</span><span>n</span></h2>
-                    <div class="wrapper__title" data-scroll><h2 class="textStroke"><span>D</span><span>e</span><span>s</span><span>i</span><span>g</span><span>n</span></h2></div>            
+                <div class="wrapper__title" ><h2 class="textStroke">안녕하세요.</h2> 
+                    <div class="wrapper__title"><h2 class="name"></h2></div>
+                    <div class="wrapper__title" ><h2 class="textStroke"><b>김해든</b> 입니다.</h2></div>            
                 </div>
-            <div class="text2">
-                <div class="wrapper__desc"><p>introduce my self----------------------Title------------------------------ </p></div>
-                <div class="wrapper__desc"><p>Thanks to introduce my self----------------------Title------------------------------ </p></div>
-            </div>
-
-            <div class="scrollDownHomepage">
-                <div class="scrollDownHomepage__container">
-                    <div class="image-arrow"></div>
-                    <div class="image-circle"></div>
-                </div>
-            </div>
-
+            <!-- <div class="text2">
+                <div class="wrapper"><p>----------------------------Title--------------------------------------- </p></div>
+                <div class="wrapper"><p>-------------------------------------Title------------------------------ </p></div>
+            </div> -->
             <div class="down">
-                DOWN
+               Click
             </div>
         </div>
     </div>
     <div id="project">
         <div class="wrap" >
-            <div class="box" id="box1" style="background-color:rgb(99, 99, 99);">첫 번째
+            <div class="box" id="box1" style="background-color:rgb(83, 83, 83);">첫 번째
                 <div class="go" id="intro">
                     
                 </div>
@@ -139,25 +214,59 @@
                 <div class="go" id="intro"></div>
             </div>
         </div>
+        <div class="up">UP</div>
     </div>  
 
         <div class="wrapa" id="wrap">
             <nav>
                 <ul>
                     <li>
-                        <a data-anchor="" href=""><span></span></a>
+                        <a data-anchor="" href="">
+                            <p></p>
+                            인트로</a>
                     </li>
                     <li>
-                        <a data-anchor="" href=""><span></span></a>
+                        <a data-anchor="" href="">
+                            <p></p>
+                            자기소개</a>
+                        </a>
                     </li>
                     <li>
-                        <a data-anchor="" href=""><span></span></a>
+                        <a data-anchor="" href="">
+                            <p></p>
+                            - 프로젝트</a>
                     </li>
                     <li>
-                        <a data-anchor="" href=""><span></span></a>
+                        <a data-anchor="" href="">
+                        <p></p>
+                        1. Adobe 리뉴얼 웹사이트</a>
                     </li>
                     <li>
-                        <a data-anchor="" href=""><span></span></a>
+                        <a data-anchor="" href="">
+                            <p></p>
+                        2. Yogibo 반응형 웹사이트</a>
+                    </li>
+                    <li>
+                        <a data-anchor="" href="">
+                            <p></p>
+                        3. 밀리의서재 웹사이트 (Ajax)</a>
+                    </li>
+                    <li>
+                        <a data-anchor="" href="">
+                            <p></p>
+                            프로젝트+</a>
+                    </li>
+                    <li>
+                        <a data-anchor="" href="">
+                            <p></p>
+                            프로젝트+</a>
+                        </a>
+                    </li>
+                    <li>
+                        <a data-anchor="" href="">
+                            <p></p>
+                            끝</a>
+                        </a>
                     </li>
                 </ul>
             </nav>
