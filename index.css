@@ -23,7 +23,7 @@ a{text-decoration: none;}
     position:relative;
     top:0;left:0;
     width:100%;
-    height: 900px;
+    height: 100%;
     z-index:4; 
     background-color: rgb(0, 0, 0);
     /* overflow: hidden; */
@@ -134,7 +134,7 @@ nav li {
     font-family: 'RIDIBatang';
     margin-bottom: 10px;
     cursor: pointer;
-    font-size: 11.5px;
+    font-size: 11px;
     
 }
 
@@ -153,6 +153,91 @@ nav li a{
 
 
 
+html,body{ margin:0; padding:0; width:100%; height:100%;}
+		/* body { overflow:hidden;} */
+       .wrap{overflow: hidden;}
+
+    
+        #project{
+            overflow: hidden; 
+            /* border: 5px solid floralwhite;  */
+            position: relative;
+        }
+
+		.wrap { height:900px; width:1000%; position: relative; } /* width값 수정하시오. .box 갯수 x 100% */
+        .box{ 
+             height:100%; 
+             width:100%; 
+             position:relative; 
+             color:#ffffff; 
+             font-size:24pt; float:left;
+              width:calc(100%/5); /* calc의 값을 수정하시오.  100% / .box 갯수 */
+           
+            }
+        .myself_wrap{
+            width: 1200px;
+            height: 80%;
+            margin-left: 5%;
+            border: 5px solid rgb(255, 255, 255);
+            border-radius: 10px;
+        }
+        .wrp{
+            width: 400px;
+            height: 70%;
+            margin-top: 9%;
+            margin-left: 3%;
+            border: 5px solid rgb(255, 255, 255);
+            border-radius: 10px;
+        }
+        .wrp img{
+            width: 1000px;
+            height: 1000px;
+        }
+        
+        #intro{
+            height: 600px; width: 70%; 
+            background-color: rgba(255, 255, 255, 0.2);
+            margin: 100px auto; 
+            
+        }
+            
+        #intro_title{
+            height: 200px; 
+            border: 3px solid floralwhite;
+            width: 800px; 
+            position:absolute; 
+            bottom: 150px;
+            left: 150px;
+        } 
+
+        .down{
+            font-size: 60px;
+            width: max-content;
+            height: auto;
+            margin: 0 auto;
+            cursor: pointer;
+        }
+
+        .up{
+            font-size: 60px;
+            width: 100%;
+            text-align: center;
+            height: auto;
+            margin: 0 auto;
+            border: 2px solid white;
+           z-index: 1;
+        }   
+        
+        .name{
+            display: inline; vertical-align: middle;
+            font-size: 15vh;
+            width: 500px;
+            height: 150px;
+            border-bottom: 5px solid rgb(230, 230, 230);
+            letter-spacing: 10px;
+            color: rgb(79, 165, 151);
+           
+        }
 
 
 
